@@ -1,0 +1,40 @@
+test_average (__main__.TestExercice) ... ok
+test_square (__main__.TestExercice) ... ok
+test_square_root (__main__.TestExercice) ... ok
+test_to_celsius (__main__.TestExercice) ... ok
+test_to_degrees (__main__.TestExercice) ... ERROR
+test_to_farenheit (__main__.TestExercice) ... ok
+test_to_radians (__main__.TestExercice) ... FAIL
+
+======================================================================
+ERROR: test_to_degrees (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 80, in test_to_degrees
+    output = [exercice.to_degrees(v) for v in values]
+  File "test_exercice.py", line 80, in <listcomp>
+    output = [exercice.to_degrees(v) for v in values]
+TypeError: to_degrees() missing 2 required positional arguments: 'minutes' and 'seconds'
+
+======================================================================
+FAIL: test_to_radians (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 64, in test_to_radians
+    self.assertListEqual(
+AssertionError: Lists differ: [(-0.08726646259971647, 0.0005817764173314[208 chars]-05)] != [-0.08668468618238503, 0.17598251810595048[32 chars]2748]
+
+First differing element 0:
+(-0.08726646259971647, 0.0005817764173314432, 0.0)
+-0.08668468618238503
+
++ [-0.08668468618238503, 0.17598251810595048, 6.283490739798685, 6.9973449482748]
+- [(-0.08726646259971647, 0.0005817764173314432, 0.0),
+-  (0.17453292519943295, 0.0011635528346628863, 0.00028604007185462625),
+-  (6.283185307179586, 0.0002908882086657216, 1.454441043328608e-05),
+-  (6.981317007977318, 0.015998851476614687, 2.908882086657216e-05)] : Mauvais calcul de degres -> radians
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=1, errors=1)
