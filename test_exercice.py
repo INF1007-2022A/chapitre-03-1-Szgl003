@@ -70,10 +70,10 @@ class TestExercice(unittest.TestCase):
     def test_to_degrees(self):
         def __to_degrees(rad: float) -> tuple:
             degrees = math.degrees(rad)
-            minutes = (degrees % 1) * 60
-            seconds = (minutes % 1) * 60
+            min = (degrees - math.floor(degrees)) * 60
+            sec = (min - math.floor(min)) * 60
 
-            return degrees - minutes, minutes - seconds, seconds
+            return math.floor(degrees), math.floor(min), sec
             
         values = [2, -4, 5, 4.09]
 
